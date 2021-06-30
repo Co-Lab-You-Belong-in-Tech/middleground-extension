@@ -12,7 +12,7 @@ const Popup = () => {
       </header>
       <Organization />
       <Stories />
-      <a href="http://localhost:3000/" target="_blank" rel="noreferrer" className="more">
+      <a href="https://middleground.netlify.app" target="_blank" rel="noreferrer" className="more">
         VIEW MORE
       </a>
       <div className="underline"></div>
