@@ -178,11 +178,21 @@ var options = {
         },
       ],
     }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/assets/img/Al-Jazeera-Logo.png",
+    //       to: path.join(__dirname, "build"),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "src/assets/img/Al-Jazeera-Logo.png",
-          to: path.join(__dirname, "build"),
+          from: "**/*",
+          context: path.resolve(__dirname, "src/assets/orgs_logo"),
+          to: path.join(__dirname, "build/orgs_logo"),
           force: true,
         },
       ],

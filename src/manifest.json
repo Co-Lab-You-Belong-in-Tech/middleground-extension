@@ -2,31 +2,31 @@
   "manifest_version": 3,
   "name": "Middle Ground",
   "description": "An extension for finding unbiased related articles",
-  "version": "0.0.2",
-  "background": { "service_worker": "background.bundle.js" },
+  "version": "0.0.5",
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "32.png"
   },
   "permissions": ["tabs"],
-  "host_permissions": ["https://*.aljazeera.com/*"],
+  "host_permissions": ["https://*.aljazeera.com/*", "<all_urls>"],
   "icons": {
     "16": "16.png",
     "32": "32.png",
     "128": "128.png"
   },
   "content_scripts": [
-    
+
     {
-      "matches": ["https://*.aljazeera.com/*"],
+      "matches": ["https://*.aljazeera.com/*", "<all_urls>"],
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": ["content.styles.css", "128.png", "32.png"],
-      "matches": []
-    }
-  ]
+  "web_accessible_resources": [{
+    "resources": ["content.styles.css", "128.png", "32.png"],
+    "matches": []
+  }]
 }
