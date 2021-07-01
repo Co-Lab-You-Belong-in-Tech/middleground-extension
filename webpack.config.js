@@ -4,8 +4,7 @@ var webpack = require("webpack"),
   env = require("./utils/env"),
   { CleanWebpackPlugin } = require("clean-webpack-plugin"),
   CopyWebpackPlugin = require("copy-webpack-plugin"),
-  HtmlWebpackPlugin = require("html-webpack-plugin"),
-  TerserPlugin = require("terser-webpack-plugin");
+  HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const ASSET_PATH = process.env.ASSET_PATH || "/";
 
@@ -52,7 +51,7 @@ var options = {
     rules: [
       {
         // look for .css or .scss files
-        test: /\.(css|scss)$/,
+        test: /\.(css)$/,
         // in the `src` directory
         use: [
           {
@@ -60,12 +59,6 @@ var options = {
           },
           {
             loader: "css-loader",
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-            },
           },
         ],
       },
@@ -211,11 +204,7 @@ if (env.NODE_ENV === "development") {
 } else {
   options.optimization = {
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false,
-      }),
-    ],
+    minimizer: [],
   };
 }
 
