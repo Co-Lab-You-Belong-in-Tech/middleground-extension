@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import STOPWORDS from "../datasets/stop_words.json";
-import Organizations from "../datasets/news_orgs.json";
-import { parseUrl, matchOrganization } from "../utils/parseUrl";
+import { matchOrganization } from "../utils/parseUrl";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { DateTime } from "luxon";
