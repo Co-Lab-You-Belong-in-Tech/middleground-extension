@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import STOPWORDS from "../datasets/stop_words.json";
 import Organizations from "../datasets/news_orgs.json";
+import { parseUrl, matchOrganization } from "../utils/parseUrl";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { DateTime } from "luxon";
@@ -18,6 +19,11 @@ function Stories({ setOrg }) {
       var tabs = await chrome.tabs.query({ active: true, currentWindow: true });
       console.log(tabs, "is the tabs");
       console.log(tabs[0].url);
+      setOrg(matchOrganization(tabs[0].url));
+      // console.log(
+      //   matchOrganization(tabs[0].url),
+      //   "is the matched organization"
+      // );
       chrome.tabs.sendMessage(
         tabs[0].id,
         { message: "send-h1" },
@@ -67,8 +73,11 @@ function Stories({ setOrg }) {
           returnValue.push(word);
         }
       }
+      if (returnValue.length > 3) {
+        returnValue = returnValue.slice(0, 3).join(" ");
+      }
 
-      return `${returnValue[0]}`;
+      return returnValue;
     }
   }, []);
 

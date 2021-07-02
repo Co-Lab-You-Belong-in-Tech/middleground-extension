@@ -1,35 +1,43 @@
 {
-    "organizations": [{
-        "domain": "aljazeera.com",
+    "list": [{
+        "name": "Al Jazeera",
+        "hostname": "www.aljazeera.com",
         "bias": "center",
         "logo": "./orgs_logo/al-jazeera.png"
     }, {
-        "domain": "apnews.com",
+        "name": "AP news",
+        "hostname": "apnews.com",
         "bias": "center",
         "logo": "./orgs_logo/apnews.png"
     }, {
-        "domain": "thehill.com",
+        "name": "The Hill",
+        "hostname": "thehill.com",
         "bias": "center",
         "logo": "./orgs_logo/the-hill.png"
     }, {
-        "domain": "fortune.com",
+        "name": "Fortune",
+        "hostname": "fortune.com",
         "bias": "center",
         "logo": "./orgs_logo/fortune.png"
     }, {
-        "domain": "reuters.com",
-        "bias": "left",
+        "name": "Reuters",
+        "hostname": "www.reuters.com",
+        "bias": "left leaning",
         "logo": "./orgs_logo/reuters.png"
     }, {
-        "domain": "cbsnews.com",
-        "bias": "left",
+        "name": "CBS news",
+        "hostname": "www.cbsnews.com",
+        "bias": "left leaning",
         "logo": "./orgs_logo/cbs-news.png"
     }, {
-        "domain": "axios.com",
-        "bias": "left",
+        "name": "Axios",
+        "hostname": "www.axios.com",
+        "bias": "left leaning",
         "logo": "./orgs_logo/axios.png"
     }, {
-        "domain": "bloomberg.com",
-        "bias": "right",
+        "name": "Bloomberg",
+        "hostname": "www.bloomberg.com",
+        "bias": "right leaning",
         "logo": "./orgs_logo/bloomberg.png"
     }]
 }
