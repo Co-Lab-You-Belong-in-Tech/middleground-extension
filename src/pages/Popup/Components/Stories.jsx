@@ -1,11 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import STOPWORDS from "./../test.json";
+import STOPWORDS from "../datasets/stop_words.json";
+import Organizations from "../datasets/news_orgs.json";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { DateTime } from "luxon";
 
-function Stories(props) {
+function Stories({ setOrg }) {
   const [isLoading, setLoading] = useState(true);
   const [stories, setStories] = useState([]);
   var fromDate = DateTime.now().toSQLDate();
@@ -16,14 +17,14 @@ function Stories(props) {
     async function makingRequest() {
       var tabs = await chrome.tabs.query({ active: true, currentWindow: true });
       console.log(tabs, "is the tabs");
+      console.log(tabs[0].url);
       chrome.tabs.sendMessage(
         tabs[0].id,
         { message: "send-h1" },
         function (response) {
           console.log(response, "is the received response.");
-          if (response.h1) {
+          if (response !== undefined && response.message === "sending-h1") {
             makeRequest(response.h1);
-            // setLoading(false);
           } else {
             setLoading(false);
             return [];
@@ -47,7 +48,6 @@ function Stories(props) {
         } else {
           console.log("No articles found!");
         }
-        // setLoading(false);
       } catch (error) {
         console.log("CATCHING");
       } finally {
@@ -68,7 +68,7 @@ function Stories(props) {
         }
       }
 
-      return `${returnValue[0]} ${returnValue[1]}`;
+      return `${returnValue[0]}`;
     }
   }, []);
 

@@ -1,0 +1,35 @@
+{
+    "organizations": [{
+        "domain": "aljazeera.com",
+        "bias": "center",
+        "logo": "./orgs_logo/al-jazeera.png"
+    }, {
+        "domain": "apnews.com",
+        "bias": "center",
+        "logo": "./orgs_logo/apnews.png"
+    }, {
+        "domain": "thehill.com",
+        "bias": "center",
+        "logo": "./orgs_logo/the-hill.png"
+    }, {
+        "domain": "fortune.com",
+        "bias": "center",
+        "logo": "./orgs_logo/fortune.png"
+    }, {
+        "domain": "reuters.com",
+        "bias": "left",
+        "logo": "./orgs_logo/reuters.png"
+    }, {
+        "domain": "cbsnews.com",
+        "bias": "left",
+        "logo": "./orgs_logo/cbs-news.png"
+    }, {
+        "domain": "axios.com",
+        "bias": "left",
+        "logo": "./orgs_logo/axios.png"
+    }, {
+        "domain": "bloomberg.com",
+        "bias": "right",
+        "logo": "./orgs_logo/bloomberg.png"
+    }]
+}
