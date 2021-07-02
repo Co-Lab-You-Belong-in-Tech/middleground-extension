@@ -11,7 +11,7 @@
     "default_icon": "32.png"
   },
   "permissions": ["tabs"],
-  "host_permissions": ["https://*.aljazeera.com/*", "<all_urls>"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "16": "16.png",
     "32": "32.png",
@@ -20,7 +20,7 @@
   "content_scripts": [
 
     {
-      "matches": ["https://*.aljazeera.com/*", "<all_urls>"],
+      "matches": ["<all_urls>"],
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }

@@ -1,14 +1,20 @@
 import React from "react";
 
-function Organization(props) {
+function Organization({ org }) {
   return (
-    <div className="organizations">
-      <img src="./Al-Jazeera-Logo.png" alt="al jazeera logo" />
-      <div className="details">
-        <h5>THIS NEWS ORGANIZATION HAS A</h5>
-        <h3>LEFT LEANING BIAS</h3>
-        <p>BY AD FONTES MEDIA</p>
-      </div>
+    <div>
+      {org == null ? (
+        <h1>Loading</h1>
+      ) : (
+        <div className="organizations">
+          <img src={org.logo} alt={org.name} />
+          <div className="details">
+            <h5>THIS NEWS ORGANIZATION HAS A</h5>
+            <h3>{org.bias.toUpperCase()} BIAS</h3>
+            <p>BY AD FONTES MEDIA</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
