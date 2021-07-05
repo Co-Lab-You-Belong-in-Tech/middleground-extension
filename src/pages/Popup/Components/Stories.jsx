@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import STOPWORDS from "../datasets/stop_words.json";
 import { matchOrganization } from "../utils/parseUrl";
+import { assignBias } from "../utils/assignOrgBias";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import { DateTime } from "luxon";
@@ -41,20 +42,24 @@ function Stories({ setOrg }) {
     async function makeRequest(response) {
       var query = filterResponse(response);
       console.log(query);
+      console.log(fromDate, toDate, "are the dates");
       try {
         var res = await fetch(
-          `https://middleground-backend.herokuapp.com/searchTerm?query=${query}&view=${"center"}&datefrom=${fromDate}&dateto=${toDate}&order=${"popularity"}`
+          `https://middleground-backend.herokuapp.com/searchTerm?query=${query}&view=${"all"}&datefrom=${fromDate}&dateto=${toDate}&order=${"popularity"}`
         );
 
         if (res.ok) {
           res = await res.json();
           console.log(res);
-          setStories(res.articles.slice(0, 3));
+          var newResults = res.articles.slice(0, 3);
+          newResults = assignBias(newResults);
+          setStories(newResults);
         } else {
           console.log("No articles found!");
         }
       } catch (error) {
         console.log("CATCHING");
+        console.log(error);
       } finally {
         setLoading(false);
       }
@@ -117,7 +122,10 @@ function Stories({ setOrg }) {
                     alt={story.title}
                     className="story-image"
                   />
-                  <div class="story-information">{story.title}</div>
+                  <div className="information">
+                    <div class="story-information">{story.title}</div>
+                    <img src={story.biasImage} alt="bias depictor" />
+                  </div>
                 </a>
               );
             })

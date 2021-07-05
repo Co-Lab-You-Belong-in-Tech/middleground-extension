@@ -13,15 +13,17 @@ const Popup = () => {
       </header>
       <Organization org={org} />
       <Stories setOrg={setOrg} />
-      <a
-        href="https://middleground.netlify.app"
-        target="_blank"
-        rel="noreferrer"
-        className="more"
-      >
-        VIEW MORE
-      </a>
-      <div className="underline"></div>
+      <div className="more-container">
+        <a
+          href="https://middleground.netlify.app"
+          target="_blank"
+          rel="noreferrer"
+          className="more"
+        >
+          VIEW MORE
+        </a>
+        <div className="underline"></div>
+      </div>
     </div>
   );
 };
