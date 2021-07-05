@@ -136,48 +136,49 @@ var options = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "src/assets/img/16.png",
-          to: path.join(__dirname, "build"),
+          from: "**/*",
+          context: path.resolve(__dirname, "src/assets/img"),
+          to: path.join(__dirname, "build/resources"),
           force: true,
         },
       ],
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "src/assets/img/32.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "src/assets/img/48.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "src/assets/img/128.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-      ],
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: "src/assets/img/256.png",
-          to: path.join(__dirname, "build"),
-          force: true,
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/assets/img/32.png",
+    //       to: path.join(__dirname, "build"),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/assets/img/48.png",
+    //       to: path.join(__dirname, "build"),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/assets/img/128.png",
+    //       to: path.join(__dirname, "build"),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: "src/assets/img/256.png",
+    //       to: path.join(__dirname, "build"),
+    //       force: true,
+    //     },
+    //   ],
+    // }),
     // new CopyWebpackPlugin({
     //   patterns: [
     //     {
@@ -192,7 +193,17 @@ var options = {
         {
           from: "**/*",
           context: path.resolve(__dirname, "src/assets/orgs_logo"),
-          to: path.join(__dirname, "build/orgs_logo"),
+          to: path.join(__dirname, "build/resources/orgs_logo"),
+          force: true,
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "**/*",
+          context: path.resolve(__dirname, "src/pages/Popup/fonts/mohave"),
+          to: path.join(__dirname, "build/fonts/mohave"),
           force: true,
         },
       ],
