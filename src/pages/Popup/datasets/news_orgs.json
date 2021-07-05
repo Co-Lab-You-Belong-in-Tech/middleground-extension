@@ -3,41 +3,41 @@
         "name": "Al Jazeera",
         "hostname": "www.aljazeera.com",
         "bias": "center",
-        "logo": "./orgs_logo/al-jazeera.png"
+        "logo": "./resources/orgs_logo/al-jazeera.png"
     }, {
         "name": "AP news",
         "hostname": "apnews.com",
         "bias": "center",
-        "logo": "./orgs_logo/apnews.png"
+        "logo": "./resources/orgs_logo/apnews.png"
     }, {
         "name": "The Hill",
         "hostname": "thehill.com",
         "bias": "center",
-        "logo": "./orgs_logo/the-hill.png"
+        "logo": "./resources/orgs_logo/the-hill.png"
     }, {
         "name": "Fortune",
         "hostname": "fortune.com",
         "bias": "center",
-        "logo": "./orgs_logo/fortune.png"
+        "logo": "./resources/orgs_logo/fortune.png"
     }, {
         "name": "Reuters",
         "hostname": "www.reuters.com",
         "bias": "left leaning",
-        "logo": "./orgs_logo/reuters.png"
+        "logo": "./resources/orgs_logo/reuters.png"
     }, {
         "name": "CBS news",
         "hostname": "www.cbsnews.com",
         "bias": "left leaning",
-        "logo": "./orgs_logo/cbs-news.png"
+        "logo": "./resources/orgs_logo/cbs-news.png"
     }, {
         "name": "Axios",
         "hostname": "www.axios.com",
         "bias": "left leaning",
-        "logo": "./orgs_logo/axios.png"
+        "logo": "./resources/orgs_logo/axios.png"
     }, {
         "name": "Bloomberg",
         "hostname": "www.bloomberg.com",
         "bias": "right leaning",
-        "logo": "./orgs_logo/bloomberg.png"
+        "logo": "./resources/orgs_logo/bloomberg.png"
     }]
 }
