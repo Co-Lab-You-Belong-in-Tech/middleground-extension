@@ -9,6 +9,7 @@ function matchOrganization(pageUrl, organizations = Orgs.list) {
   var hostname = parsedUrl.hostname;
 
   var foundOrg = organizations.find((org) => org.hostname === hostname);
+  if (foundOrg === undefined) return "not found";
   return foundOrg;
 }
 
