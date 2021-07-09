@@ -206,12 +206,17 @@ a {
 .App {
   width: 313px;
   /* height: 550px; */
-  background-color: #C5C2B3;
-  background: linear-gradient(163.75deg, #C5C2B3 8.01%, #FFFFFF 100.06%);
+  /* background-color: #C5C2B3;
+  background: linear-gradient(163.75deg, #C5C2B3 8.01%, #FFFFFF 100.06%); */
+  background-image: url('https://raw.githubusercontent.com/Co-Lab-You-Belong-in-Tech/middleground-frontend/9623e7df290ccb8768dae518f78418ee8fc16ecb/src/resources/background.svg');
 }
+
 
 .App-header {
   display: flex;
+  background-color: black;
+  color: white;
+  padding-bottom: 5px;
 }
 
 .App-header h1 {
@@ -387,4 +392,30 @@ a {
   border: 2px solid #D2F42F;
   background-color: #D2F42F;
   transform: rotate(-0.56deg);
+}
+
+.not-supported-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  padding: 30px 0px;
+}
+.not-supported-container img{
+  width: 165px;
+  height: auto;
+}
+.not-supported-container h1 {
+  width: 70%;
+  text-align: center;
+  font-family: 'Teko';
+  font-size: 22px;
+  margin-top: 10px;
+}
+.not-supported-container a {
+  padding-top: 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  border-bottom: 3px solid #D2F42F;
 }

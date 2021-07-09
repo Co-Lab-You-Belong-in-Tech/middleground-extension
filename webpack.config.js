@@ -36,7 +36,7 @@ var options = {
   mode: process.env.NODE_ENV || "development",
   entry: {
     popup: path.join(__dirname, "src", "pages", "Popup", "index.jsx"),
-    background: path.join(__dirname, "src", "pages", "Background", "index.js"),
+    // background: path.join(__dirname, "src", "pages", "Background", "index.js"),
     contentScript: path.join(__dirname, "src", "pages", "Content", "index.js"),
   },
   chromeExtensionBoilerplate: {
@@ -143,15 +143,6 @@ var options = {
         },
       ],
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: "src/assets/img/32.png",
-    //       to: path.join(__dirname, "build"),
-    //       force: true,
-    //     },
-    //   ],
-    // }),
     // new CopyWebpackPlugin({
     //   patterns: [
     //     {
