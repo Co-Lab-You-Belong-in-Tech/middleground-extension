@@ -3,9 +3,6 @@
   "name": "Middle Ground",
   "description": "An extension for finding unbiased related articles",
   "version": "1.0.0",
-  "background": {
-    "service_worker": "background.bundle.js"
-  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": "./resources/32.png"
