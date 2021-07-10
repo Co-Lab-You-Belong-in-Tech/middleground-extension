@@ -342,7 +342,7 @@ a {
 
 .story-image {
   width: 119px;
-  height: 74px;
+  height: auto;
   margin-left: 16px;
 }
 
