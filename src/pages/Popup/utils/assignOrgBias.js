@@ -4,7 +4,9 @@ import Orgs from "../datasets/news_orgs.json";
 function assignBias(articles, organizations = Orgs.list) {
   articles = articles.map(function (article) {
     const hostname = parseUrl(article.url);
+    // TODO: some organizations are yet to be entered in the news_orgs.json file eg: www.bbc.co.uk
     var foundOrg = organizations.find((org) => org.hostname === hostname);
+    console.log(foundOrg, "is the found org", hostname, "is the hostname");
     var biasImage;
     if (foundOrg.bias === "center") {
       biasImage = "./resources/center_mini.png";
@@ -22,4 +24,4 @@ function assignBias(articles, organizations = Orgs.list) {
   return articles;
 }
 
-export { assignBias };
+export default assignBias;
