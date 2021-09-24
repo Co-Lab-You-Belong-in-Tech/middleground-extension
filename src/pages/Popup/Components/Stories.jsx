@@ -20,10 +20,6 @@ function Stories({ setOrg }) {
       console.log(tabs, "is the tabs");
       console.log(tabs[0].url);
       setOrg(matchOrganization(tabs[0].url));
-      // console.log(
-      //   matchOrganization(tabs[0].url),
-      //   "is the matched organization"
-      // );
       chrome.tabs.sendMessage(
         tabs[0].id,
         { message: "send-h1" },
@@ -40,12 +36,12 @@ function Stories({ setOrg }) {
     }
 
     async function makeRequest(response) {
-      var query = filterResponse(response);
+      var query = filterResponseRemoveStopWords(response);
       console.log(query);
       console.log(fromDate, toDate, "are the dates");
       try {
         var res = await fetch(
-          `https://middleground-backend.herokuapp.com/searchTerm?query=${query}&view=${"all"}&datefrom=${fromDate}&dateto=${toDate}&order=${"popularity"}`
+          `https://middleground-backend.herokuapp.com/searchTerm?query=${query}&view=all&datefrom=${fromDate}&dateto=${toDate}&order=${"popularity"}`
         );
 
         if (res.ok) {
@@ -65,7 +61,7 @@ function Stories({ setOrg }) {
       }
     }
 
-    function filterResponse(response) {
+    function filterResponseRemoveStopWords(response) {
       if (response === null) return;
       response = response.toLowerCase();
       response = response.split(" ");
