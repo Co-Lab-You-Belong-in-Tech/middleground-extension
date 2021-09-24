@@ -7,7 +7,7 @@
     "default_popup": "popup.html",
     "default_icon": "./resources/32.png"
   },
-  "permissions": ["tabs"],
+  "permissions": [],
   "host_permissions": ["<all_urls>"],
   "icons": {
     "16": "./resources/16.png",
