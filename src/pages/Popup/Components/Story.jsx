@@ -11,7 +11,7 @@ function Story({ story }) {
       <img src={story.urlToImage} alt={story.title} className="story-image" />
       <div className="information">
         <div class="story-information">{story.title}</div>
-        <img src={story.biasImage} alt="bias depictor" />
+        {story.biasImage && <img src={story.biasImage} alt="bias depictor" />}
       </div>
     </a>
   );

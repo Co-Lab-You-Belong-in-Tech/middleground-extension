@@ -4,6 +4,8 @@ import Organization from "./Components/Organization";
 import Stories from "./Components/Stories";
 import NotSupported from "./Components/Notsupported";
 import { matchOrganization } from "./utils/parseUrl";
+import Legends from "./Components/Legends";
+import Viewmore from "./Components/Viewmore";
 
 function Popup() {
   const [org, setOrg] = useState(null);
@@ -23,12 +25,12 @@ function Popup() {
         tabs[0].id,
         { message: "send-h1" },
         function (response) {
-          console.log(response, "is the response from the tab.");
+          // receiving h1 and message from the tab
           if (response !== undefined && response.message === "sending-h1") {
+            // setting h1 state to that other articles can be found
             setH1(response.h1);
           } else {
-            // setLoading(false);
-            // return [];
+            setH1(null);
           }
         }
       );
@@ -46,18 +48,9 @@ function Popup() {
       ) : (
         <div>
           <Organization org={org} />
+          <Legends />
           <Stories h1={h1} />
-          <div className="more-container">
-            <a
-              href="https://middleground.netlify.app"
-              target="_blank"
-              rel="noreferrer"
-              className="more"
-            >
-              VIEW MORE
-            </a>
-            <div className="underline"></div>
-          </div>
+          <Viewmore />
         </div>
       )}
     </div>

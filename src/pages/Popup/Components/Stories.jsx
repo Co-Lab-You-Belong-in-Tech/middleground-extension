@@ -1,12 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Loader from "react-loader-spinner";
 import { DateTime } from "luxon";
 import STOPWORDS from "../datasets/stop_words.json";
 import filterH1RemoveStopWords from "../utils/filterStopWords";
 import assignBias from "../utils/assignOrgBias";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Story from "./Story";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function Stories({ h1 }) {
   const [isLoading, setLoading] = useState(true);
@@ -27,25 +26,26 @@ function Stories({ h1 }) {
 
           if (res.ok) {
             res = await res.json();
-            console.log(res);
-            var newResults = res.articles.slice(0, 3);
+            var newArticles = res.articles.slice(0, 3);
 
-            // TODO: fix the assignBias function which doesn't include the results in news_orgs.json file
-            newResults = assignBias(newResults);
-            setStories(newResults);
+            // assigning organizational bias
+            newArticles = assignBias(newArticles);
+
+            // set articles state to update them on page
+            setStories(newArticles);
           } else {
-            console.log("No articles found!");
+            // no articles found
             setStories([]);
           }
         } catch (error) {
-          console.log("CATCHING");
+          // logging the error
           console.log(error);
         } finally {
           setLoading(false);
         }
       }
     },
-    [h1]
+    [h1, fromDate, toDate]
   );
 
   return (
