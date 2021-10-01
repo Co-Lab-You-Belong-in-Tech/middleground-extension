@@ -1,4 +1,4 @@
-import STOPWORDS from "./test.json";
+// import STOPWORDS from "./test.json";
 // chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 //   //   if (request.message === 'no-h1') return sender;
 //   console.log('here');

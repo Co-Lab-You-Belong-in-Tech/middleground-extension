@@ -39,5 +39,25 @@
         "hostname": "www.bloomberg.com",
         "bias": "right leaning",
         "logo": "./resources/orgs_logo/bloomberg.png"
+    }, {
+        "name": "BBC",
+        "hostname": "www.bbc.co.uk",
+        "bias": "left leaning",
+        "logo": "./resources/orgs_logo/bbc.png"
+    }, {
+        "name": "The Fiscal Times",
+        "hostname": "www.thefiscaltimes.com",
+        "bias": "right leaning",
+        "logo": "./resources/orgs_logo/the-fiscal-times.png"
+    }, {
+        "name": "WSJ",
+        "hostname": "www.wsj.com",
+        "bias": "right leaning",
+        "logo": "./resources/orgs_logo/wsj.png"
+    }, {
+        "name": "NBC",
+        "hostname": "www.nbcnews.com/",
+        "bias": "left leaning",
+        "logo": "./resources/orgs_logo/nbc.png"
     }]
 }
